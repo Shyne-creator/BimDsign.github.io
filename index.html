@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bima Setiawan - Home</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            position: relative; /* Memungkinkan elemen di atas background */
+            color: #fff;
+            height: 100vh; /* Memastikan tinggi badan 100% */
+        }
+
+        /* Latar belakang gambar */
+        .bg-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('background.jpg'); /* Ganti dengan path ke gambar latar belakang Anda */
+            background-size: cover; /* Memastikan gambar memenuhi area */
+            background-position: center; /* Memusatkan gambar */
+            filter: blur(8px); /* Efek blur */
+            z-index: -1; /* Menempatkan gambar di belakang konten */
+        }
+
+        header {
+            background-color: rgba(26, 26, 26, 0.8); /* Latar belakang hitam transparan */
+            padding: 30px;
+            text-align: center;
+            color: #fff;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+            border-radius: 10px; /* Sudut yang halus */
+            margin: 20px; /* Margin untuk jarak dari tepi */
+            position: relative; /* Agar posisi gambar profil relatif terhadap header */
+            margin-bottom: 80px; /* Menambahkan space antara header dan foto profil */
+        }
+
+        .profile-pic {
+            position: absolute; /* Memungkinkan penempatan di posisi tertentu */
+            top: 100px; /* Jarak dari atas header */
+            right: 20px; /* Jarak dari kanan */
+            width: 80px; /* Ukuran lebar gambar yang lebih kecil */
+            height: 80px; /* Ukuran tinggi gambar yang lebih kecil */
+            border-radius: 50%; /* Membuat gambar berbentuk bulat */
+            object-fit: cover; /* Memastikan gambar tetap proporsional */
+            border: 2px solid #fff; /* Opsional: memberikan border putih di sekitar gambar */
+        }
+
+        nav {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 20px;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 10px 15px;
+            background-color: #333;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #555;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+        }
+
+        section {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: rgba(34, 34, 34, 0.9); /* Latar belakang transparan untuk section */
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            text-align: center; /* Rata tengah isi section */
+        }
+
+        h1 {
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        p {
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bg-image"></div> <!-- Gambar background -->
+
+    <header>
+        <h1>Welcome to Bima Setiawan Website</h1>
+        <p>Poster Designer | Creative Visionary</p>
+        <img src="profile.jpg" alt="Profile Picture" class="profile-pic"> <!-- Ganti path dengan lokasi gambar profil Anda -->
+    </header>
+
+    <nav>
+        <a href="about.html">About Me</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <section>
+        <h2>Welcome!</h2>
+        <p>This is my homepage, a designer who creates visual art with precision and creativity. Feel free to explore my work and contact us!</p>
+    </section>
+    <section>
+        <h1>Services I Offer:</h1>
+        </section>
+        
+    <section>
+        <h2>Logo Design:</h2>
+        <p>Create a strong visual identity for your brand, so it's easy to remember and makes a lasting impression.</p>
+    </section>
+    <section>
+        <h2>Logo Remake:</h2>
+        <p>Change or update the existing logo to make it more relevant and in line with current developments.</p>
+    </section>
+    <section>
+        <h2>Poster Design</h2>
+        <p>Create attractive and informative posters for various purposes, from events to product promotions.</p>
+    </section>
+
+</body>
+</html>

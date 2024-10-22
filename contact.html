@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Contact Me - Bima Setiawan</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body, html {
+            height: 100%;
+            font-family: Arial, sans-serif;
+            position: relative; /* Memungkinkan posisi elemen di atas background */
+            color: #fff; /* Mengatur warna teks agar kontras */
+        }
+
+        .bg-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('background.jpg'); /* Ganti dengan path ke gambar Anda */
+            background-size: cover; /* Memastikan gambar memenuhi area */
+            background-position: center; /* Memusatkan gambar */
+            filter: blur(8px); /* Mengatur efek blur */
+            z-index: -1; /* Menempatkan gambar di belakang konten */
+        }
+
+        header, nav, section {
+            position: relative; /* Memastikan elemen lain tetap di atas gambar */
+            z-index: 1; /* Menempatkan elemen di atas gambar */
+            padding: 20px; /* Tambahkan padding untuk memberikan ruang */
+            background: rgba(0, 0, 0, 0.6); /* Tambahkan latar belakang hitam transparan untuk kontras */
+            margin: 20px; /* Menambahkan margin antar elemen */
+            border-radius: 8px; /* Menghaluskan sudut */
+        }
+
+        nav a {
+            margin: 0 10px; /* Jarak antar link */
+            color: #fff; /* Warna link */
+            text-decoration: none; /* Menghilangkan garis bawah pada link */
+        }
+
+        form {
+            display: flex;
+            flex-direction: column; /* Menyusun form secara vertikal */
+        }
+
+        form label {
+            margin-bottom: 5px; /* Jarak antara label dan input */
+        }
+
+        form input, form textarea {
+            margin-bottom: 10px; /* Jarak antar input */
+            padding: 10px; /* Ruang dalam input */
+            border-radius: 4px; /* Menghaluskan sudut input */
+            border: none; /* Menghilangkan border default */
+        }
+
+        form input[type="submit"] {
+            background-color: #4CAF50; /* Warna latar belakang tombol */
+            color: white; /* Warna teks tombol */
+            cursor: pointer; /* Mengubah kursor saat hover */
+        }
+
+        form input[type="submit"]:hover {
+            background-color: #45a049; /* Warna saat hover */
+        }
+
+        /* Styling untuk footer */
+        footer {
+            text-align: center; /* Mengatur teks menjadi rata tengah */
+            margin: 40px 0; /* Menambahkan margin untuk footer agar lebih jauh */
+        }
+
+        .social-buttons {
+            display: flex; /* Menggunakan flexbox untuk susunan horizontal */
+            justify-content: center; /* Mengatur agar berada di tengah */
+            gap: 20px; /* Jarak antar tombol */
+        }
+
+        .social-button {
+            width: 30px; /* Atur lebar logo */
+            height: 30px; /* Atur tinggi logo */
+            display: inline-block; /* Memastikan tombol bersifat inline-block */
+            background-size: cover; /* Memastikan gambar memenuhi area tombol */
+        }
+
+        .social-button.facebook {
+            background-image: url('facebook-logo.png'); /* Ganti dengan path ke logo Facebook */
+        }
+
+        .social-button.instagram {
+            background-image: url('instagram-logo.png'); /* Ganti dengan path ke logo Instagram */
+        }
+
+        .social-button.twitter {
+            background-image: url('twitter-logo.png'); /* Ganti dengan path ke logo Twitter */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bg-image"></div> <!-- Gambar background -->
+
+    <header>
+        <h1>Contact Me</h1>
+        <p>I'd love to hear from you!</p>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Me</a>
+        <a href="portfolio.html">Portfolio</a>
+    </nav>
+
+    <section>
+        <form action="send_email.php" method="post">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+
+            <input type="submit" value="Send Message">
+        </form>
+    </section>
+
+    <footer>
+        <div class="social-buttons">
+            <a href="https://www.facebook.com/share/YdHiMFaUUsJtULby/" class="social-button facebook"></a>
+            <a href="https://www.instagram.com/_hodako?igsh=MXQwaTVud3BxeHo2" class="social-button instagram"></a>
+            <a href="https://x.com/IdHahaboll?t=PF2DQgjNYjL6B1q_BwrT4w&s=09" class="social-button twitter"></a>
+        </div>
+    </footer>
+
+</body>
+</html>

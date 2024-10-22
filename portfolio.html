@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bima Setiawan's Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            position: relative; /* Memungkinkan elemen di atas background */
+            color: #fff;
+            height: 100vh; /* Memastikan tinggi badan 100% */
+        }
+
+        /* Latar belakang gambar */
+        .bg-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('background.jpg'); /* Ganti dengan path ke gambar latar belakang Anda */
+            background-size: cover; /* Memastikan gambar memenuhi area */
+            background-position: center; /* Memusatkan gambar */
+            filter: blur(8px); /* Efek blur */
+            z-index: -1; /* Menempatkan gambar di belakang konten */
+        }
+
+        header {
+            background-color: rgba(26, 26, 26, 0.8); /* Latar belakang hitam transparan */
+            padding: 30px;
+            text-align: center;
+            color: #fff;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+            border-radius: 10px; /* Sudut yang halus */
+            margin: 20px; /* Margin untuk jarak dari tepi */
+        }
+
+        nav {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 20px;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 10px 15px;
+            background-color: #333;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #555;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+        }
+
+        section {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: rgba(34, 34, 34, 0.9); /* Latar belakang transparan untuk section */
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .portfolio {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .portfolio-item {
+            flex: 1 1 calc(30% - 40px);
+            background-color: #333;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            cursor: pointer; /* Add cursor pointer for better UX */
+        }
+
+        .portfolio-item img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .portfolio-item p {
+            text-align: center;
+            color: #fff;
+            margin-top: 10px;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1000; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgba(0, 0, 0, 0.9); /* Black w/ opacity */
+        }
+
+        .modal-content {
+            margin: 15% auto; /* 15% from the top and centered */
+            display: block;
+            width: 80%; /* Could be more or less, depending on screen size */
+            max-width: 700px; /* Set a max width */
+        }
+
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            color: #fff;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bg-image"></div> <!-- Gambar background -->
+
+    <header>
+        <h1>My Portfolio</h1>
+        <p>Check out my latest work!</p>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Me</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <section>
+        <div class="portfolio">
+            <div class="portfolio-item" onclick="openModal('poster1.jpg')">
+                <img src="poster1.jpg" alt="Poster 1">
+                <p>Garnacho: goal phenomenal moment</p>
+            </div>
+            <div class="portfolio-item" onclick="openModal('poster2.jpg')">
+                <img src="poster2.jpg" alt="Poster 2">
+                <p>Matchday Manchester United with Hojlund</p>
+            </div>
+            <div class="portfolio-item" onclick="openModal('poster3.jpg')">
+                <img src="poster3.jpg" alt="Poster 3">
+                <p>Matchday Manchester United with Diogo Dalot</p>
+            </div>
+            <div class="portfolio-item" onclick="openModal('poster4.jpg')">
+                <img src="poster4.jpg" alt="Poster 4">
+                <p>Art Exhibition Poster Mees Hilgers</p>
+            </div>
+            <div class="portfolio-item" onclick="openModal('poster5.jpg')">
+                <img src="poster5.jpg" alt="Poster 5">
+                <p>Big Match BRI Liga 1 Persib vs Persebaya</p>
+            </div>
+            <div class="portfolio-item" onclick="openModal('poster6.jpg')">
+                <img src="poster6.jpg" alt="Poster 6">
+                <p>Matchday Chelsea with Jadon Sancho</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImage" alt="Full Image">
+    </div>
+
+    <script>
+        function openModal(imageSrc) {
+            document.getElementById('modalImage').src = imageSrc;
+            document.getElementById('myModal').style.display = "block";
+        }
+
+        function closeModal() {
+            document.getElementById('myModal').style.display = "none";
+        }
+
+        // Close modal on clicking outside of the image
+        window.onclick = function(event) {
+            const modal = document.getElementById('myModal');
+            if (event.target === modal) {
+                closeModal();
+            }
+        }
+    </script>
+
+</body>
+</html>
