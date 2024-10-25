@@ -40,7 +40,13 @@
             color: #fff;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
             border-radius: 10px; /* Sudut yang halus */
-            margin: olute; /* Memungkinkan penempatan di posisi tertentu */
+            margin: 20px; /* Margin untuk jarak dari tepi */
+            position: relative; /* Agar posisi gambar profil relatif terhadap header */
+            margin-bottom: 80px; /* Menambahkan space antara header dan foto profil */
+        }
+
+        .profile-pic {
+            position: absolute; /* Memungkinkan penempatan di posisi tertentu */
             top: 100px; /* Jarak dari atas header */
             right: 20px; /* Jarak dari kanan */
             width: 80px; /* Ukuran lebar gambar yang lebih kecil */
@@ -73,7 +79,7 @@
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
         }
 
-        section {  
+        section {
             max-width: 1000px;
             margin: 40px auto;
             padding: 20px;
